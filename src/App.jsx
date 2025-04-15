@@ -8,9 +8,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-  <>
+  <section className='bg-gradient-to-b from-slate-900 to-slate-400'>
   <Emoji />
-  </>
+  </section>
   )
 }
 
