@@ -1,1 +1,30 @@
 @import "tailwindcss";
+/* Custom scrollbar styles for the entire app */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(94, 234, 212, 0.5);
+    border-radius: 10px;
+  }
+  
+  /* If you want to target only specific containers */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(94, 234, 212, 0.5);
+    border-radius: 10px;
+  }

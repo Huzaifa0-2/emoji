@@ -18,10 +18,10 @@ const Emoji = () => {
     );
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-700 text-white p-6">
-            {/* Header & Search */}
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-300 text-white p-6">
+     
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+                <h1 className=" text-4xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-black to-blue-500">
                     Emoji Finder
                 </h1>
                 
@@ -30,20 +30,19 @@ const Emoji = () => {
                         className="px-6 py-4 w-full max-w-xl rounded-xl bg-slate-800 border border-slate-600 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 text-white placeholder-slate-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/10"
                         type="search" 
                         value={search} 
-                        placeholder="🔍 Search emoji by name or keyword..." 
+                        placeholder="🔍 Search emoji by name..." 
                         onChange={(e) => setSearch(e.target.value)}
                     />
-                    {search && (
+                    {/* {search && (
                         <button 
                             onClick={() => setSearch("")}
                             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white"
                         >
                             ✕
                         </button>
-                    )}
+                    )} */}
                 </div>
-
-                {/* Emoji Grid */}
+              
                 {filteredEmojis.length > 0 ? (
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4 bg-slate-800/50 rounded-2xl border border-slate-700/50 backdrop-blur-sm max-h-[60vh] overflow-y-auto custom-scrollbar">
                         {filteredEmojis.map((emoji, index) => (
@@ -78,19 +77,19 @@ const Emoji = () => {
                     </div>
                 )}
 
-                {/* Footer */}
-                <div className="mt-8 text-center text-slate-400">
-                    <marquee behavior="scroll" direction="left" scrollamount="5">
-                    <p className="text-sm">
-                        Developer: 
+                
+                <div className="mt-8 text-center text-slate-800">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">
+                    <p className="text-md">
+                        Developer
                         <a 
                             href="https://github.com/Huzaifa0-2" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="ml-1 text-cyan-400 hover:text-cyan-300 hover:underline flex items-center justify-center"
+                            className="text-cyan-700 hover:text-cyan-300 hover:underline flex mt-1"
                         >
                             Huzaifa 
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                         </a>
@@ -98,21 +97,6 @@ const Emoji = () => {
                     </marquee>
                 </div>
             </div>
-
-            {/* Add this to your global CSS */}
-            <style jsx>{`
-                .custom-scrollbar::-webkit-scrollbar {
-                    width: 8px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-track {
-                    background: rgba(30, 41, 59, 0.5);
-                    border-radius: 10px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: rgba(94, 234, 212, 0.5);
-                    border-radius: 10px;
-                }
-            `}</style>
         </div>
     );
 };
